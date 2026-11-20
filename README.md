@@ -1,6 +1,6 @@
 # New Maintenance
 
----
+
 
 ![modrinth](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/available/modrinth_46h.png?raw=true)
 ![hangar](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/available/hangar_46h.png?raw=true)
