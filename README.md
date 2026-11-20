@@ -2,7 +2,8 @@
 
 
 
-[![!modrinth](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/available/modrinth_46h.png?raw=true)](https://modrinth.com/project/newmaintenance)
+
+[![!hangar](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/available/hangar_46h.png?raw=true)](https://hangar.papermc.io/itsphox7/NewMaintenance)
 ![paper](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/supported/paper_46h.png?raw=true)
 ![nospigot](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/unsupported/spigot_46h.png?raw=true)
 ![kotlin](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/built-with/kotlin_46h.png?raw=true)
