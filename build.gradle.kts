@@ -6,19 +6,24 @@ plugins {
 }
 
 group = "de.itsphox"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
     maven(url = "https://repo.papermc.io/repository/maven-public/")
     maven(url = "https://eldonexus.de/repository/maven-public/")
     maven("https://jitpack.io")
+    maven {
+        name = "faststatsReleases"
+        url = uri("https://repo.faststats.dev/releases")
+    }
+
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
     compileOnly("io.papermc.paper:paper-api:26.3.build.+")
-    implementation("org.bstats:bstats-bukkit:3.2.1")
+    implementation("dev.faststats.metrics:bukkit:0.32.2")
     compileOnly("net.strokkur.commands:annotations-paper:2.3.1")
     kapt("net.strokkur.commands:processor-paper:2.3.1")
     implementation("com.github.QuadrixYT18.Qavlen:qavlen-config:v0.5.3")

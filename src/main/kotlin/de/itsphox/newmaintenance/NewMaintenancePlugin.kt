@@ -5,18 +5,23 @@ import de.itsphox.newmaintenance.listeners.PlayerLoginListener
 import de.quadrixyt.qavlen.config.YamlConfig
 import de.quadrixyt.qavlen.updater.UpdateChecker
 import de.quadrixyt.qavlen.updater.UpdateResult
+import dev.faststats.Metrics
+import dev.faststats.bukkit.BukkitContext
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents
-import org.bstats.bukkit.Metrics
 import org.bukkit.plugin.java.JavaPlugin
 
 
 class NewMaintenancePlugin : JavaPlugin() {
 
+    private val context = BukkitContext.Factory(this, "8f9e0980bdd545b88c5d429a4225deec")
+        .metrics(Metrics.Factory::create)
+        .create()
+
     lateinit var messageConfig: YamlConfig
     lateinit var config: YamlConfig
 
     override fun onEnable() {
-        val metrics = Metrics(this, 35462)
+        context.ready()
         registerCommands()
         initConfigs()
         server.pluginManager.registerEvents(PlayerLoginListener(this), this)
@@ -31,6 +36,10 @@ class NewMaintenancePlugin : JavaPlugin() {
                 }
             }
         }
+    }
+
+    override fun onDisable() {
+        context.shutdown()
     }
 
     fun initConfigs() {
