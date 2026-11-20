@@ -10,14 +10,8 @@ class PlayerLoginListener(private val plugin: NewMaintenancePlugin) : Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     fun onPlayerLogin(event: PlayerLoginEvent) {
-        if (!plugin.config.getBoolean("maintenance-enabled", false)) {
-            return
-        }
-
-        if (event.player.hasPermission("newmaintenance.bypass")) {
-            return
-        }
-
-        event.disallow(PlayerLoginEvent.Result.KICK_OTHER, plugin.messageConfig.getString("maintenance-kick-message", ""))
+        if (!plugin.config.getBoolean("maintenance-enabled", false)) return
+        if (event.player.hasPermission("newmaintenance.bypass")) return
+        event.disallow(PlayerLoginEvent.Result.KICK_OTHER, plugin.messageConfig.getComponent("maintenance-kick-message"))
     }
 }

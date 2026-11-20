@@ -36,6 +36,13 @@ tasks.processResources {
     }
 }
 
+tasks.shadowJar {
+    relocate(
+        "de.quadrixyt.qavlen",
+        "de.itsphox.newmaintenance.libs.qavlen"
+    )
+}
+
 modrinth {
     token.set(System.getenv("MODRINTH_TOKEN"))
     projectId.set("aXq1wdra")

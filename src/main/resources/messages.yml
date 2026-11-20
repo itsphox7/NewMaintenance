@@ -1,6 +1,8 @@
 prefix: ""
 messages:
-  maintenance-command-on: ""
-  maintenance-command-off: ""
-  maintenance-command-status: ""
+  maintenance-command-on: "<gray>Maintenance is now <enabled>"
+  maintenance-command-off: "<gray>Maintenance is now <disabled>"
+  maintenance-command-status: "<gray>Maintenance is now <status>."
   maintenance-kick-message: "<red>Server is in maintenance mode."
+  disabled: "<red>disabled"
+  enabled: "<green>enabled"
