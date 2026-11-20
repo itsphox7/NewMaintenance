@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "de.itsphox"
-version = "0.0.1"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -17,11 +17,12 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+    compileOnly("io.papermc.paper:paper-api:26.3.build.+")
     implementation("org.bstats:bstats-bukkit:3.2.1")
     compileOnly("net.strokkur.commands:annotations-paper:2.3.1")
     kapt("net.strokkur.commands:processor-paper:2.3.1")
-    implementation("com.github.QuadrixYT18.Qavlen:qavlen-config:v0.4.1")
+    implementation("com.github.QuadrixYT18.Qavlen:qavlen-config:v0.5.3")
+    implementation("com.github.QuadrixYT18.Qavlen:qavlen-updater:v0.5.3")
 }
 
 kotlin {
@@ -37,14 +38,20 @@ tasks.processResources {
 }
 
 tasks.shadowJar {
-    relocate(
-        "de.quadrixyt.qavlen",
-        "de.itsphox.newmaintenance.libs.qavlen"
-    )
+    archiveClassifier.set("")
+    configurations = project.configurations.runtimeClasspath.map { setOf(it) }
+    relocate("de.quadrixyt.qavlen", "de.itsphox.newmaintenance.libs.qavlen")
+    relocate("org.bstats", "de.itsphox.newmaintenance.libs.bstats")
+    mergeServiceFiles()
 }
 
 modrinth {
     token.set(System.getenv("MODRINTH_TOKEN"))
     projectId.set("aXq1wdra")
+    versionNumber.set("${project.version}")
+    versionType.set("release")
+    uploadFile.set(tasks.named("shadowJar"))
+    gameVersions.addAll("26.3")
+    loaders.add("paper")
     syncBodyFrom.set(rootProject.file("README.md").readText())
 }

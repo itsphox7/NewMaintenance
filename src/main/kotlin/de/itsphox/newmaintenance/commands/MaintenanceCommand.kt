@@ -12,7 +12,7 @@ class MaintenanceCommand(private val plugin: NewMaintenancePlugin) {
     fun maintenanceOn(sender: CommandSender) {
         plugin.config.set("maintenance-enabled", true)
         plugin.config.save()
-        val finalMessage = plugin.messageConfig.getComponent("maintenance-command-on", "status" to plugin.messageConfig.getComponent("enabled"))
+        val finalMessage = plugin.messageConfig.getComponent("messages.maintenance-command-on")
         sender.sendMessage(finalMessage)
     }
 
@@ -20,14 +20,14 @@ class MaintenanceCommand(private val plugin: NewMaintenancePlugin) {
     fun maintenanceOff(sender: CommandSender) {
         plugin.config.set("maintenance-enabled", false)
         plugin.config.save()
-        val finalMessage = plugin.messageConfig.getComponent("maintenance-command-off", "status" to plugin.messageConfig.getComponent("disabled"))
+        val finalMessage = plugin.messageConfig.getComponent("messages.maintenance-command-off")
         sender.sendMessage(finalMessage)
     }
 
     @Executes("status")
     fun maintenanceStatus(sender: CommandSender) {
         val status = plugin.config.getBoolean("maintenance-enabled") ?: false
-        val statusText = if (status) plugin.messageConfig.getComponent("status-enabled") else plugin.messageConfig.getComponent("status-disabled")
-        sender.sendMessage(plugin.messageConfig.getComponent("maintenance-command-status", "status" to statusText))
+        val statusText = if (status) plugin.messageConfig.getComponent("messages.enabled") else plugin.messageConfig.getComponent("messages.disabled")
+        sender.sendMessage(plugin.messageConfig.getComponent("messages.maintenance-command-status", "status" to statusText))
     }
 }

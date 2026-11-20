@@ -1,8 +1,12 @@
-prefix: ""
+# NewMaintenance - messages.yml - by ItsPhox
+
+# General prefix for all plugin messages
+prefix: "<dark_gray>[<gold>Maintenance<dark_gray>] "
+
 messages:
-  maintenance-command-on: "<gray>Maintenance is now <enabled>"
-  maintenance-command-off: "<gray>Maintenance is now <disabled>"
-  maintenance-command-status: "<gray>Maintenance is now <status>."
-  maintenance-kick-message: "<red>Server is in maintenance mode."
+  maintenance-command-on: "<prefix><gray>Maintenance is now <green>on<gray>."
+  maintenance-command-off: "<prefix><gray>Maintenance is now <red>off<gray>."
+  maintenance-command-status: "<prefix><gray>Maintenance is currently <status>."
+  maintenance-kick-message: "<prefix><red>Server is in maintenance mode."
   disabled: "<red>disabled"
   enabled: "<green>enabled"

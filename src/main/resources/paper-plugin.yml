@@ -2,6 +2,6 @@ name: NewMaintenance
 version: '${version}'
 main: de.itsphox.newmaintenance.NewMaintenancePlugin
 description: A modern maintenance plugin
-api-version: '26.1'
+api-version: '26.3'
 author: ItsPhox
 website: https://modrinth.com/project/newmaintenance
