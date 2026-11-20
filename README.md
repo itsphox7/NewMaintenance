@@ -25,4 +25,4 @@ Features
 
 ---
 
-[![bstats](https://bstats.org/signatures/bukkit/NewMaintenance.svg)](https://bstats.org/plugin/bukkit/NewMaintenance/35462)
+[![Servers & Players](https://www.faststats.dev/embed/default:8e2f5670-868f-4b6d-8371-c15f124f3046:servers-and-players.svg?w=960&h=340&theme=dark)](https://www.faststats.dev/project/newmaintenance/dashboards/minecraft-plugin)
