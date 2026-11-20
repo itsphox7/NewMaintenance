@@ -8,6 +8,7 @@
 ![kotlin](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/built-with/kotlin_46h.png?raw=true)
 ![java25](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/built-with/java25_46h.png?raw=true)
 [![!discord](https://github.com/intergrav/devins-badges/blob/v3/assets/compact/social/discord-plural_46h.png?raw=true)](https://discord.com/invite/caaJTnRk8Z)
+
 NewMaintenance is a paper plugin, that allows you to set your server in maintenance mode with advanced features. 
 
 This plugin is fully customizable, you can change everything.
