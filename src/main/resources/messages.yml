@@ -1,0 +1,6 @@
+prefix: ""
+messages:
+  maintenance-command-on: ""
+  maintenance-command-off: ""
+  maintenance-command-status: ""
+  maintenance-kick-message: "<red>Server is in maintenance mode."

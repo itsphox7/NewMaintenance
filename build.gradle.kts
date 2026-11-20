@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "2.4.21"
     id("com.gradleup.shadow") version "9.3.2"
     kotlin("kapt") version "2.4.21"
+    id("com.modrinth.minotaur") version "2.+"
 }
 
 group = "de.itsphox"
@@ -11,6 +12,7 @@ repositories {
     mavenCentral()
     maven(url = "https://repo.papermc.io/repository/maven-public/")
     maven(url = "https://eldonexus.de/repository/maven-public/")
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -19,6 +21,7 @@ dependencies {
     implementation("org.bstats:bstats-bukkit:3.2.1")
     compileOnly("net.strokkur.commands:annotations-paper:2.3.1")
     kapt("net.strokkur.commands:processor-paper:2.3.1")
+    implementation("com.github.QuadrixYT18.Qavlen:qavlen-config:v0.4.1")
 }
 
 kotlin {
@@ -31,4 +34,10 @@ tasks.processResources {
     filesMatching("paper-plugin.yml") {
         expand(properties)
     }
+}
+
+modrinth {
+    token.set(System.getenv("MODRINTH_TOKEN"))
+    projectId.set("aXq1wdra")
+    syncBodyFrom.set(rootProject.file("README.md").readText())
 }

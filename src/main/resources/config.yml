@@ -1,0 +1,9 @@
+# Toggles maintenance mode:
+# true  = maintenance mode is enabled
+# false = maintenance mode is disabled
+maintenance-enabled: false
+
+# Controls whether the plugins should check for updates:
+# true  = plugins check for available updates
+# false = plugins do not check for updates
+check-updates: true
